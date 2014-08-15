@@ -3,4 +3,10 @@
     <%= form.submit 'shout!' %>
 <% end %>
 
+<%= form_for @photo_shout do |form| %>
+<%= form.file_field :image %>
+    <%= form.submit 'shout!' %>
+<% end %>
+
+
 <%= render @shouts %>

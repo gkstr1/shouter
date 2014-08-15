@@ -5597,3 +5597,860 @@ Started GET "/assets/text_shouts.js?body=1" for 24.127.195.86 at 2014-08-14 08:2
 
 
 Started GET "/assets/application.js?body=1" for 24.127.195.86 at 2014-08-14 08:23:41 +0000
+
+
+Started GET "/" for 24.127.195.86 at 2014-08-15 02:26:06 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomesController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+Redirected to http://gray-frog-11-123468.use1.nitrousbox.com/dashboard
+Filter chain halted as :check_user_logged_in rendered or redirected
+Completed 302 Found in 46ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/dashboard" for 24.127.195.86 at 2014-08-15 02:26:08 +0000
+Processing by DashboardsController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mShout Load (0.3ms)[0m  SELECT "shouts".* FROM "shouts"  WHERE "shouts"."user_id" = ?  ORDER BY created_at DESC  [["user_id", 1]]
+  [1m[36mTextShout Load (0.2ms)[0m  [1mSELECT  "text_shouts".* FROM "text_shouts"  WHERE "text_shouts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered text_shouts/_text_shout.html.erb (0.4ms)
+  Rendered shouts/_shout.html.erb (15.9ms)
+  Rendered dashboards/show.html.erb within layouts/application (46.5ms)
+Completed 200 OK in 133ms (Views: 108.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/dashboards.css?body=1" for 24.127.195.86 at 2014-08-15 02:26:11 +0000
+
+
+Started GET "/assets/homes.css?body=1" for 24.127.195.86 at 2014-08-15 02:26:11 +0000
+
+
+Started GET "/assets/shouter.css?body=1" for 24.127.195.86 at 2014-08-15 02:26:11 +0000
+
+
+Started GET "/assets/text_shouts.css?body=1" for 24.127.195.86 at 2014-08-15 02:26:11 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.127.195.86 at 2014-08-15 02:26:11 +0000
+
+
+Started GET "/assets/shouts.css?body=1" for 24.127.195.86 at 2014-08-15 02:26:11 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.127.195.86 at 2014-08-15 02:26:11 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.127.195.86 at 2014-08-15 02:26:11 +0000
+
+
+Started GET "/assets/shouts.js?body=1" for 24.127.195.86 at 2014-08-15 02:26:11 +0000
+
+
+Started GET "/assets/dashboards.js?body=1" for 24.127.195.86 at 2014-08-15 02:26:11 +0000
+
+
+Started GET "/assets/homes.js?body=1" for 24.127.195.86 at 2014-08-15 02:26:11 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.127.195.86 at 2014-08-15 02:26:11 +0000
+
+
+Started GET "/assets/text_shouts.js?body=1" for 24.127.195.86 at 2014-08-15 02:26:11 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.127.195.86 at 2014-08-15 02:26:11 +0000
+
+
+Started POST "/text_shouts" for 24.127.195.86 at 2014-08-15 02:26:30 +0000
+Processing by TextShoutsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5yueSL+vimjElcwenD2JnzSRZgwaqHYWdE5bOWEumpk=", "text_shout"=>{"body"=>"hello again"}, "commit"=>"shout!"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "text_shouts" ("body") VALUES (?)  [["body", "hello again"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shouts" ("content_id", "content_type", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["content_id", 2], ["content_type", "TextShout"], ["created_at", "2014-08-15 02:26:30.241452"], ["updated_at", "2014-08-15 02:26:30.241452"], ["user_id", 1]]
+  [1m[35m (122.5ms)[0m  commit transaction
+Redirected to http://gray-frog-11-123468.use1.nitrousbox.com/dashboard
+Completed 302 Found in 131ms (ActiveRecord: 123.7ms)
+
+
+Started GET "/dashboard" for 24.127.195.86 at 2014-08-15 02:26:30 +0000
+Processing by DashboardsController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mShout Load (0.2ms)[0m  SELECT "shouts".* FROM "shouts"  WHERE "shouts"."user_id" = ?  ORDER BY created_at DESC  [["user_id", 1]]
+  [1m[36mTextShout Load (0.1ms)[0m  [1mSELECT  "text_shouts".* FROM "text_shouts"  WHERE "text_shouts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered text_shouts/_text_shout.html.erb (0.1ms)
+  [1m[35mTextShout Load (0.2ms)[0m  SELECT  "text_shouts".* FROM "text_shouts"  WHERE "text_shouts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered text_shouts/_text_shout.html.erb (0.1ms)
+  Rendered shouts/_shout.html.erb (8.4ms)
+  Rendered dashboards/show.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 37ms (Views: 29.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/homes.css?body=1" for 24.127.195.86 at 2014-08-15 02:26:31 +0000
+
+
+Started GET "/assets/dashboards.css?body=1" for 24.127.195.86 at 2014-08-15 02:26:31 +0000
+
+
+Started GET "/assets/shouter.css?body=1" for 24.127.195.86 at 2014-08-15 02:26:31 +0000
+
+
+Started GET "/assets/shouts.css?body=1" for 24.127.195.86 at 2014-08-15 02:26:31 +0000
+
+
+Started GET "/assets/text_shouts.css?body=1" for 24.127.195.86 at 2014-08-15 02:26:31 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.127.195.86 at 2014-08-15 02:26:32 +0000
+
+
+Started GET "/assets/dashboards.js?body=1" for 24.127.195.86 at 2014-08-15 02:26:32 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.127.195.86 at 2014-08-15 02:26:32 +0000
+
+
+Started GET "/assets/homes.js?body=1" for 24.127.195.86 at 2014-08-15 02:26:32 +0000
+
+
+Started GET "/assets/shouts.js?body=1" for 24.127.195.86 at 2014-08-15 02:26:32 +0000
+
+
+Started GET "/assets/text_shouts.js?body=1" for 24.127.195.86 at 2014-08-15 02:26:32 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePhotoShouts (20140815023136)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "photo_shouts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image_file_name" varchar(255), "image_content_type" varchar(255), "image_file_size" integer, "image_updated_at" datetime) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140815023136"]]
+  [1m[36m (31.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_shouts_on_content_type_and_content_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_shouts_on_content_type_and_content_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_shouts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_shouts_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_username' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_username' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/" for 24.127.195.86 at 2014-08-15 02:36:10 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomesController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+Redirected to http://gray-frog-11-123468.use1.nitrousbox.com/dashboard
+Filter chain halted as :check_user_logged_in rendered or redirected
+Completed 302 Found in 35ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/dashboard" for 24.127.195.86 at 2014-08-15 02:36:10 +0000
+Processing by DashboardsController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered dashboards/show.html.erb within layouts/application (30.6ms)
+Completed 500 Internal Server Error in 64ms
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    3:     <%= form.submit 'shout!' %>
+    4: <% end %>
+    5: 
+    6: <%= form_for @photo_shout do |form| %>
+    7: <%= form.file_field :image %>
+    8:     <%= form.submit 'shout!' %>
+    9: <% end %>
+  app/views/dashboards/show.html.erb:6:in `_app_views_dashboards_show_html_erb__1668563634385100580_70198313671940'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (20.3ms)
+
+
+Started GET "/dashboard" for 24.127.195.86 at 2014-08-15 02:39:21 +0000
+Processing by DashboardsController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+  Rendered dashboards/show.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    3:     <%= form.submit 'shout!' %>
+    4: <% end %>
+    5: 
+    6: <%= form_for @photo_shout do |form| %>
+    7: <%= form.file_field :image %>
+    8:     <%= form.submit 'shout!' %>
+    9: <% end %>
+  app/views/dashboards/show.html.erb:6:in `_app_views_dashboards_show_html_erb__1668563634385100580_70198313671940'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (97.4ms)
+
+
+Started GET "/dashboard" for 24.127.195.86 at 2014-08-15 02:39:27 +0000
+Processing by DashboardsController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mShout Load (0.6ms)[0m  SELECT "shouts".* FROM "shouts"  WHERE "shouts"."user_id" = ?  ORDER BY created_at DESC  [["user_id", 1]]
+  Rendered dashboards/show.html.erb within layouts/application (87.0ms)
+Completed 500 Internal Server Error in 141ms
+
+ActionView::Template::Error (undefined method `photo_shouts_path' for #<#<Class:0x007fb0a2707998>:0x007fb0a2706bb0>):
+    3:     <%= form.submit 'shout!' %>
+    4: <% end %>
+    5: 
+    6: <%= form_for @photo_shout do |form| %>
+    7: <%= form.file_field :image %>
+    8:     <%= form.submit 'shout!' %>
+    9: <% end %>
+  app/views/dashboards/show.html.erb:6:in `_app_views_dashboards_show_html_erb__1668563634385100580_70198313671940'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.7ms)
+
+
+Started GET "/dashboard" for 24.127.195.86 at 2014-08-15 02:40:29 +0000
+Processing by DashboardsController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mShout Load (0.4ms)[0m  SELECT "shouts".* FROM "shouts"  WHERE "shouts"."user_id" = ?  ORDER BY created_at DESC  [["user_id", 1]]
+  [1m[36mTextShout Load (0.2ms)[0m  [1mSELECT  "text_shouts".* FROM "text_shouts"  WHERE "text_shouts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered text_shouts/_text_shout.html.erb (0.4ms)
+  [1m[35mTextShout Load (0.2ms)[0m  SELECT  "text_shouts".* FROM "text_shouts"  WHERE "text_shouts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered text_shouts/_text_shout.html.erb (0.1ms)
+  Rendered shouts/_shout.html.erb (37.1ms)
+  Rendered dashboards/show.html.erb within layouts/application (74.8ms)
+Completed 200 OK in 188ms (Views: 172.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/dashboards.css?body=1" for 24.127.195.86 at 2014-08-15 02:40:30 +0000
+
+
+Started GET "/assets/shouts.css?body=1" for 24.127.195.86 at 2014-08-15 02:40:30 +0000
+
+
+Started GET "/assets/shouter.css?body=1" for 24.127.195.86 at 2014-08-15 02:40:30 +0000
+
+
+Started GET "/assets/homes.css?body=1" for 24.127.195.86 at 2014-08-15 02:40:30 +0000
+
+
+Started GET "/assets/text_shouts.css?body=1" for 24.127.195.86 at 2014-08-15 02:40:30 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.127.195.86 at 2014-08-15 02:40:30 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.127.195.86 at 2014-08-15 02:40:30 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.127.195.86 at 2014-08-15 02:40:30 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.127.195.86 at 2014-08-15 02:40:30 +0000
+
+
+Started GET "/assets/dashboards.js?body=1" for 24.127.195.86 at 2014-08-15 02:40:30 +0000
+
+
+Started GET "/assets/homes.js?body=1" for 24.127.195.86 at 2014-08-15 02:40:30 +0000
+
+
+Started GET "/assets/shouts.js?body=1" for 24.127.195.86 at 2014-08-15 02:40:30 +0000
+
+
+Started GET "/assets/text_shouts.js?body=1" for 24.127.195.86 at 2014-08-15 02:40:30 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.127.195.86 at 2014-08-15 02:40:30 +0000
+
+
+Started POST "/photo_shouts" for 24.127.195.86 at 2014-08-15 02:41:07 +0000
+
+ActionController::RoutingError (uninitialized constant PhotoShoutsController):
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:236:in `constantize'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.9ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (35.1ms)
+
+
+Started POST "/photo_shouts" for 24.127.195.86 at 2014-08-15 02:47:19 +0000
+
+ActionController::RoutingError (uninitialized constant PhotoShoutsController):
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:236:in `constantize'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (42.8ms)
+
+
+Started POST "/photo_shouts" for 24.127.195.86 at 2014-08-15 02:48:14 +0000
+
+ActionController::RoutingError (uninitialized constant PhotoShoutsController):
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:236:in `constantize'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (30.8ms)
+
+
+Started POST "/photo_shouts" for 24.127.195.86 at 2014-08-15 02:49:03 +0000
+
+LoadError (Unable to autoload constant PhotoShoutsController, expected /home/action/shouter/app/controllers/photo_shouts_controller.rb to define it):
+  activesupport (4.1.0) lib/active_support/dependencies.rb:481:in `load_missing_constant'
+  activesupport (4.1.0) lib/active_support/dependencies.rb:180:in `const_missing'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:236:in `constantize'
+  activesupport (4.1.0) lib/active_support/dependencies.rb:552:in `get'
+  activesupport (4.1.0) lib/active_support/dependencies.rb:583:in `constantize'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (41.5ms)
+
+
+Started POST "/photo_shouts" for 24.127.195.86 at 2014-08-15 02:49:20 +0000
+
+ActionController::RoutingError (uninitialized constant PhotoShoutsController):
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:236:in `constantize'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.5ms)
+
+
+Started POST "/photo_shouts" for 24.127.195.86 at 2014-08-15 02:52:28 +0000
+
+LoadError (Unable to autoload constant PhotoShoutsController, expected /home/action/shouter/app/controllers/photo_shouts_controller.rb to define it):
+  activesupport (4.1.0) lib/active_support/dependencies.rb:481:in `load_missing_constant'
+  activesupport (4.1.0) lib/active_support/dependencies.rb:180:in `const_missing'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:236:in `constantize'
+  activesupport (4.1.0) lib/active_support/dependencies.rb:552:in `get'
+  activesupport (4.1.0) lib/active_support/dependencies.rb:583:in `constantize'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.1ms)
+
+
+Started GET "/" for 24.127.195.86 at 2014-08-15 02:53:26 +0000
+Processing by HomesController#show as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+Redirected to http://gray-frog-11-123468.use1.nitrousbox.com/dashboard
+Filter chain halted as :check_user_logged_in rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/dashboard" for 24.127.195.86 at 2014-08-15 02:53:27 +0000
+Processing by DashboardsController#show as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mShout Load (0.4ms)[0m  [1mSELECT "shouts".* FROM "shouts"  WHERE "shouts"."user_id" = ?  ORDER BY created_at DESC[0m  [["user_id", 1]]
+  [1m[35mTextShout Load (0.4ms)[0m  SELECT  "text_shouts".* FROM "text_shouts"  WHERE "text_shouts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered text_shouts/_text_shout.html.erb (0.1ms)
+  [1m[36mTextShout Load (0.1ms)[0m  [1mSELECT  "text_shouts".* FROM "text_shouts"  WHERE "text_shouts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered text_shouts/_text_shout.html.erb (0.1ms)
+  Rendered shouts/_shout.html.erb (11.3ms)
+  Rendered dashboards/show.html.erb within layouts/application (33.9ms)
+Completed 200 OK in 55ms (Views: 42.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/dashboards.css?body=1" for 24.127.195.86 at 2014-08-15 02:53:27 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.127.195.86 at 2014-08-15 02:53:27 +0000
+
+
+Started GET "/assets/shouter.css?body=1" for 24.127.195.86 at 2014-08-15 02:53:27 +0000
+
+
+Started GET "/assets/homes.css?body=1" for 24.127.195.86 at 2014-08-15 02:53:27 +0000
+
+
+Started GET "/assets/text_shouts.css?body=1" for 24.127.195.86 at 2014-08-15 02:53:27 +0000
+
+
+Started GET "/assets/shouts.css?body=1" for 24.127.195.86 at 2014-08-15 02:53:27 +0000
+
+
+Started GET "/assets/dashboards.js?body=1" for 24.127.195.86 at 2014-08-15 02:53:28 +0000
+
+
+Started GET "/assets/homes.js?body=1" for 24.127.195.86 at 2014-08-15 02:53:28 +0000
+
+
+Started GET "/assets/shouts.js?body=1" for 24.127.195.86 at 2014-08-15 02:53:28 +0000
+
+
+Started GET "/assets/text_shouts.js?body=1" for 24.127.195.86 at 2014-08-15 02:53:28 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.127.195.86 at 2014-08-15 02:53:28 +0000
+
+
+Started GET "/dashboard" for 24.127.195.86 at 2014-08-15 02:53:34 +0000
+Processing by DashboardsController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mShout Load (0.2ms)[0m  [1mSELECT "shouts".* FROM "shouts"  WHERE "shouts"."user_id" = ?  ORDER BY created_at DESC[0m  [["user_id", 1]]
+  [1m[35mTextShout Load (0.1ms)[0m  SELECT  "text_shouts".* FROM "text_shouts"  WHERE "text_shouts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered text_shouts/_text_shout.html.erb (0.1ms)
+  [1m[36mTextShout Load (0.1ms)[0m  [1mSELECT  "text_shouts".* FROM "text_shouts"  WHERE "text_shouts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered text_shouts/_text_shout.html.erb (0.1ms)
+  Rendered shouts/_shout.html.erb (5.4ms)
+  Rendered dashboards/show.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 22ms (Views: 18.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/homes.css?body=1" for 24.127.195.86 at 2014-08-15 02:53:35 +0000
+
+
+Started GET "/assets/shouts.css?body=1" for 24.127.195.86 at 2014-08-15 02:53:35 +0000
+
+
+Started GET "/assets/shouter.css?body=1" for 24.127.195.86 at 2014-08-15 02:53:35 +0000
+
+
+Started GET "/assets/text_shouts.css?body=1" for 24.127.195.86 at 2014-08-15 02:53:35 +0000
+
+
+Started GET "/assets/dashboards.css?body=1" for 24.127.195.86 at 2014-08-15 02:53:35 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.127.195.86 at 2014-08-15 02:53:35 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.127.195.86 at 2014-08-15 02:53:35 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.127.195.86 at 2014-08-15 02:53:35 +0000
+
+
+Started GET "/assets/dashboards.js?body=1" for 24.127.195.86 at 2014-08-15 02:53:35 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.127.195.86 at 2014-08-15 02:53:35 +0000
+
+
+Started GET "/assets/shouts.js?body=1" for 24.127.195.86 at 2014-08-15 02:53:35 +0000
+
+
+Started GET "/assets/homes.js?body=1" for 24.127.195.86 at 2014-08-15 02:53:35 +0000
+
+
+Started GET "/assets/text_shouts.js?body=1" for 24.127.195.86 at 2014-08-15 02:53:35 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.127.195.86 at 2014-08-15 02:53:35 +0000
+
+
+Started POST "/text_shouts" for 24.127.195.86 at 2014-08-15 02:53:37 +0000
+Processing by TextShoutsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5yueSL+vimjElcwenD2JnzSRZgwaqHYWdE5bOWEumpk=", "text_shout"=>{"body"=>""}, "commit"=>"shout!"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "text_shouts" ("body") VALUES (?)  [["body", ""]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "shouts" ("content_id", "content_type", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["content_id", 3], ["content_type", "TextShout"], ["created_at", "2014-08-15 02:53:37.120876"], ["updated_at", "2014-08-15 02:53:37.120876"], ["user_id", 1]]
+  [1m[35m (107.7ms)[0m  commit transaction
+Redirected to http://gray-frog-11-123468.use1.nitrousbox.com/dashboard
+Completed 302 Found in 120ms (ActiveRecord: 109.3ms)
+
+
+Started GET "/dashboard" for 24.127.195.86 at 2014-08-15 02:53:37 +0000
+Processing by DashboardsController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mShout Load (0.2ms)[0m  SELECT "shouts".* FROM "shouts"  WHERE "shouts"."user_id" = ?  ORDER BY created_at DESC  [["user_id", 1]]
+  [1m[36mTextShout Load (0.1ms)[0m  [1mSELECT  "text_shouts".* FROM "text_shouts"  WHERE "text_shouts"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered text_shouts/_text_shout.html.erb (0.1ms)
+  [1m[35mTextShout Load (0.1ms)[0m  SELECT  "text_shouts".* FROM "text_shouts"  WHERE "text_shouts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered text_shouts/_text_shout.html.erb (0.1ms)
+  [1m[36mTextShout Load (0.1ms)[0m  [1mSELECT  "text_shouts".* FROM "text_shouts"  WHERE "text_shouts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered text_shouts/_text_shout.html.erb (0.1ms)
+  Rendered shouts/_shout.html.erb (7.0ms)
+  Rendered dashboards/show.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 23ms (Views: 19.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/dashboards.css?body=1" for 24.127.195.86 at 2014-08-15 02:53:38 +0000
+
+
+Started GET "/assets/text_shouts.css?body=1" for 24.127.195.86 at 2014-08-15 02:53:38 +0000
+
+
+Started GET "/assets/homes.css?body=1" for 24.127.195.86 at 2014-08-15 02:53:38 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.127.195.86 at 2014-08-15 02:53:38 +0000
+
+
+Started GET "/assets/shouter.css?body=1" for 24.127.195.86 at 2014-08-15 02:53:38 +0000
+
+
+Started GET "/assets/shouts.css?body=1" for 24.127.195.86 at 2014-08-15 02:53:38 +0000
+
+
+Started GET "/assets/dashboards.js?body=1" for 24.127.195.86 at 2014-08-15 02:53:38 +0000
+
+
+Started GET "/assets/homes.js?body=1" for 24.127.195.86 at 2014-08-15 02:53:38 +0000
+
+
+Started GET "/assets/shouts.js?body=1" for 24.127.195.86 at 2014-08-15 02:53:38 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.127.195.86 at 2014-08-15 02:53:38 +0000
+
+
+Started GET "/assets/text_shouts.js?body=1" for 24.127.195.86 at 2014-08-15 02:53:38 +0000
