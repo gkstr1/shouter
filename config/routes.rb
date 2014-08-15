@@ -15,6 +15,8 @@
 #
 
 Rails.application.routes.draw do
+  get 'photo_shouts/create'
+
   get 'photoshouts/create'
 
   get 'text_shouts/create'

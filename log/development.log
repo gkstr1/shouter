@@ -6454,3 +6454,885 @@ Started GET "/assets/application.js?body=1" for 24.127.195.86 at 2014-08-15 02:5
 
 
 Started GET "/assets/text_shouts.js?body=1" for 24.127.195.86 at 2014-08-15 02:53:38 +0000
+
+
+Started GET "/dashboard" for 24.127.195.86 at 2014-08-15 03:07:29 +0000
+Processing by DashboardsController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mShout Load (0.4ms)[0m  [1mSELECT "shouts".* FROM "shouts"  WHERE "shouts"."user_id" = ?  ORDER BY created_at DESC[0m  [["user_id", 1]]
+  [1m[35mTextShout Load (0.3ms)[0m  SELECT  "text_shouts".* FROM "text_shouts"  WHERE "text_shouts"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered text_shouts/_text_shout.html.erb (0.1ms)
+  [1m[36mTextShout Load (0.1ms)[0m  [1mSELECT  "text_shouts".* FROM "text_shouts"  WHERE "text_shouts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered text_shouts/_text_shout.html.erb (0.1ms)
+  [1m[35mTextShout Load (0.1ms)[0m  SELECT  "text_shouts".* FROM "text_shouts"  WHERE "text_shouts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered text_shouts/_text_shout.html.erb (0.1ms)
+  Rendered shouts/_shout.html.erb (21.1ms)
+  Rendered dashboards/show.html.erb within layouts/application (46.0ms)
+Completed 200 OK in 684ms (Views: 659.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/dashboards.css?body=1" for 24.127.195.86 at 2014-08-15 03:07:30 +0000
+
+
+Started GET "/assets/photo_shouts.css?body=1" for 24.127.195.86 at 2014-08-15 03:07:30 +0000
+
+
+Started GET "/assets/shouter.css?body=1" for 24.127.195.86 at 2014-08-15 03:07:30 +0000
+
+
+Started GET "/assets/shouts.css?body=1" for 24.127.195.86 at 2014-08-15 03:07:30 +0000
+
+
+Started GET "/assets/text_shouts.css?body=1" for 24.127.195.86 at 2014-08-15 03:07:30 +0000
+
+
+Started GET "/assets/homes.css?body=1" for 24.127.195.86 at 2014-08-15 03:07:30 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.127.195.86 at 2014-08-15 03:07:31 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.127.195.86 at 2014-08-15 03:07:31 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.127.195.86 at 2014-08-15 03:07:31 +0000
+
+
+Started GET "/assets/dashboards.js?body=1" for 24.127.195.86 at 2014-08-15 03:07:31 +0000
+
+
+Started GET "/assets/homes.js?body=1" for 24.127.195.86 at 2014-08-15 03:07:31 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.127.195.86 at 2014-08-15 03:07:31 +0000
+
+
+Started GET "/assets/photo_shouts.js?body=1" for 24.127.195.86 at 2014-08-15 03:07:31 +0000
+
+
+Started GET "/assets/text_shouts.js?body=1" for 24.127.195.86 at 2014-08-15 03:07:31 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.127.195.86 at 2014-08-15 03:07:31 +0000
+
+
+Started GET "/assets/shouts.js?body=1" for 24.127.195.86 at 2014-08-15 03:07:31 +0000
+
+
+Started POST "/photo_shouts" for 24.127.195.86 at 2014-08-15 03:07:38 +0000
+Processing by PhotoShoutsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5yueSL+vimjElcwenD2JnzSRZgwaqHYWdE5bOWEumpk=", "commit"=>"shout!"}
+Completed 400 Bad Request in 1ms
+
+ActionController::ParameterMissing (param is missing or the value is empty: photo_shout):
+  app/controllers/photo_shouts_controller.rb:20:in `photo_shout_parameters'
+  app/controllers/photo_shouts_controller.rb:15:in `build_content'
+  app/controllers/photo_shouts_controller.rb:3:in `create'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.2ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.9ms)
+  [1m[36m (26.2ms)[0m  [1mCREATE TABLE "photo_shouts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image_file_name" varchar(255), "image_content_type" varchar(255), "image_file_size" integer, "image_updated_at" datetime) [0m
+  [1m[35m (11.8ms)[0m  CREATE TABLE "shouts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime, "content_type" varchar(255), "content_id" integer) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (15.4ms)[0m  CREATE  INDEX "index_shouts_on_content_type_and_content_id" ON "shouts" ("content_type", "content_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_shouts_on_content_type_and_content_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_shouts_on_content_type_and_content_id' AND type='index'
+[0m
+  [1m[35m (17.4ms)[0m  CREATE  INDEX "index_shouts_on_user_id" ON "shouts" ("user_id")
+  [1m[36m (13.3ms)[0m  [1mCREATE TABLE "text_shouts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" varchar(255)) [0m
+  [1m[35m (14.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) NOT NULL, "password_digest" varchar(255) NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "username" varchar(255)) 
+  [1m[36m (19.6ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (12.7ms)[0m  [1mCREATE  INDEX "index_users_on_username" ON "users" ("username")[0m
+  [1m[35m (14.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (17.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (18.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140815023136')[0m
+  [1m[35m (15.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140814070028')
+  [1m[36m (14.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140814070253')[0m
+  [1m[35m (13.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140813203424')
+  [1m[36m (12.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140813222645')[0m
+  [1m[35m (15.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140813193302')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 24.127.195.86 at 2014-08-15 03:09:11 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomesController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+  Rendered homes/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 105ms (Views: 71.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/dashboards.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:12 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:12 +0000
+
+
+Started GET "/assets/text_shouts.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:12 +0000
+
+
+Started GET "/assets/shouts.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:12 +0000
+
+
+Started GET "/assets/photo_shouts.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:12 +0000
+
+
+Started GET "/assets/homes.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:12 +0000
+
+
+Started GET "/assets/shouter.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:12 +0000
+
+
+Started GET "/assets/dashboards.js?body=1" for 24.127.195.86 at 2014-08-15 03:09:12 +0000
+
+
+Started GET "/assets/text_shouts.js?body=1" for 24.127.195.86 at 2014-08-15 03:09:12 +0000
+
+
+Started GET "/assets/photo_shouts.js?body=1" for 24.127.195.86 at 2014-08-15 03:09:12 +0000
+
+
+Started GET "/assets/homes.js?body=1" for 24.127.195.86 at 2014-08-15 03:09:12 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.127.195.86 at 2014-08-15 03:09:12 +0000
+
+
+Started GET "/assets/shouts.js?body=1" for 24.127.195.86 at 2014-08-15 03:09:12 +0000
+
+
+Started GET "/users/new" for 24.127.195.86 at 2014-08-15 03:09:15 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (29.1ms)
+Completed 200 OK in 43ms (Views: 40.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for 24.127.195.86 at 2014-08-15 03:09:25 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5yueSL+vimjElcwenD2JnzSRZgwaqHYWdE5bOWEumpk=", "user"=>{"username"=>"gkstr1", "email"=>"gkstr1@hotmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'gkstr1@hotmail.com' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'gkstr1' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-15 03:09:25.855445"], ["email", "gkstr1@hotmail.com"], ["password_digest", "$2a$10$IM5JTk2jx04dt93FqFty6u6hdBBpLkzK97ANlqpTf70WoRkY9UDxu"], ["updated_at", "2014-08-15 03:09:25.855445"], ["username", "gkstr1"]]
+  [1m[36m (67.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."email" = 'gkstr1@hotmail.com' AND "users"."id" != 1) LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'gkstr1' AND "users"."id" != 1) LIMIT 1[0m
+Redirected to http://gray-frog-11-123468.use1.nitrousbox.com/
+Completed 302 Found in 224ms (ActiveRecord: 69.6ms)
+
+
+Started GET "/" for 24.127.195.86 at 2014-08-15 03:09:26 +0000
+Processing by HomesController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+Redirected to http://gray-frog-11-123468.use1.nitrousbox.com/dashboard
+Filter chain halted as :check_user_logged_in rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/dashboard" for 24.127.195.86 at 2014-08-15 03:09:26 +0000
+Processing by DashboardsController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mShout Load (0.3ms)[0m  SELECT "shouts".* FROM "shouts"  WHERE "shouts"."user_id" = ?  ORDER BY created_at DESC  [["user_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered dashboards/show.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 48ms (Views: 24.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/homes.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:26 +0000
+
+
+Started GET "/assets/dashboards.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:26 +0000
+
+
+Started GET "/assets/photo_shouts.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:26 +0000
+
+
+Started GET "/assets/text_shouts.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:26 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:26 +0000
+
+
+Started GET "/assets/shouts.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:26 +0000
+
+
+Started GET "/assets/shouter.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:26 +0000
+
+
+Started GET "/assets/homes.js?body=1" for 24.127.195.86 at 2014-08-15 03:09:26 +0000
+
+
+Started GET "/assets/dashboards.js?body=1" for 24.127.195.86 at 2014-08-15 03:09:26 +0000
+
+
+Started GET "/assets/shouts.js?body=1" for 24.127.195.86 at 2014-08-15 03:09:27 +0000
+
+
+Started GET "/assets/photo_shouts.js?body=1" for 24.127.195.86 at 2014-08-15 03:09:27 +0000
+
+
+Started GET "/assets/text_shouts.js?body=1" for 24.127.195.86 at 2014-08-15 03:09:27 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.127.195.86 at 2014-08-15 03:09:27 +0000
+
+
+Started POST "/text_shouts" for 24.127.195.86 at 2014-08-15 03:09:31 +0000
+Processing by TextShoutsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5yueSL+vimjElcwenD2JnzSRZgwaqHYWdE5bOWEumpk=", "text_shout"=>{"body"=>"hello"}, "commit"=>"shout!"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "text_shouts" ("body") VALUES (?)[0m  [["body", "hello"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shouts" ("content_id", "content_type", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["content_id", 1], ["content_type", "TextShout"], ["created_at", "2014-08-15 03:09:31.128257"], ["updated_at", "2014-08-15 03:09:31.128257"], ["user_id", 1]]
+  [1m[36m (15.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://gray-frog-11-123468.use1.nitrousbox.com/dashboard
+Completed 302 Found in 40ms (ActiveRecord: 17.2ms)
+
+
+Started GET "/dashboard" for 24.127.195.86 at 2014-08-15 03:09:31 +0000
+Processing by DashboardsController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mShout Load (0.2ms)[0m  [1mSELECT "shouts".* FROM "shouts"  WHERE "shouts"."user_id" = ?  ORDER BY created_at DESC[0m  [["user_id", 1]]
+  [1m[35mTextShout Load (0.2ms)[0m  SELECT  "text_shouts".* FROM "text_shouts"  WHERE "text_shouts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered text_shouts/_text_shout.html.erb (0.4ms)
+  Rendered shouts/_shout.html.erb (5.4ms)
+  Rendered dashboards/show.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 24ms (Views: 20.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/photo_shouts.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:31 +0000
+
+
+Started GET "/assets/dashboards.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:31 +0000
+
+
+Started GET "/assets/homes.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:31 +0000
+
+
+Started GET "/assets/shouter.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:31 +0000
+
+
+Started GET "/assets/text_shouts.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:31 +0000
+
+
+Started GET "/assets/shouts.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:31 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:31 +0000
+
+
+Started GET "/assets/photo_shouts.js?body=1" for 24.127.195.86 at 2014-08-15 03:09:31 +0000
+
+
+Started GET "/assets/dashboards.js?body=1" for 24.127.195.86 at 2014-08-15 03:09:31 +0000
+
+
+Started GET "/assets/homes.js?body=1" for 24.127.195.86 at 2014-08-15 03:09:31 +0000
+
+
+Started GET "/assets/shouts.js?body=1" for 24.127.195.86 at 2014-08-15 03:09:31 +0000
+
+
+Started GET "/assets/text_shouts.js?body=1" for 24.127.195.86 at 2014-08-15 03:09:31 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.127.195.86 at 2014-08-15 03:09:31 +0000
+
+
+Started POST "/text_shouts" for 24.127.195.86 at 2014-08-15 03:09:37 +0000
+Processing by TextShoutsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5yueSL+vimjElcwenD2JnzSRZgwaqHYWdE5bOWEumpk=", "text_shout"=>{"body"=>""}, "commit"=>"shout!"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "text_shouts" ("body") VALUES (?)[0m  [["body", ""]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "shouts" ("content_id", "content_type", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["content_id", 2], ["content_type", "TextShout"], ["created_at", "2014-08-15 03:09:37.975665"], ["updated_at", "2014-08-15 03:09:37.975665"], ["user_id", 1]]
+  [1m[36m (26.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://gray-frog-11-123468.use1.nitrousbox.com/dashboard
+Completed 302 Found in 34ms (ActiveRecord: 27.5ms)
+
+
+Started GET "/dashboard" for 24.127.195.86 at 2014-08-15 03:09:38 +0000
+Processing by DashboardsController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mShout Load (0.2ms)[0m  [1mSELECT "shouts".* FROM "shouts"  WHERE "shouts"."user_id" = ?  ORDER BY created_at DESC[0m  [["user_id", 1]]
+  [1m[35mTextShout Load (0.1ms)[0m  SELECT  "text_shouts".* FROM "text_shouts"  WHERE "text_shouts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered text_shouts/_text_shout.html.erb (0.1ms)
+  [1m[36mTextShout Load (0.1ms)[0m  [1mSELECT  "text_shouts".* FROM "text_shouts"  WHERE "text_shouts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered text_shouts/_text_shout.html.erb (0.1ms)
+  Rendered shouts/_shout.html.erb (4.9ms)
+  Rendered dashboards/show.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 21ms (Views: 17.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/dashboards.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:38 +0000
+
+
+Started GET "/assets/homes.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:38 +0000
+
+
+Started GET "/assets/photo_shouts.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:38 +0000
+
+
+Started GET "/assets/shouter.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:38 +0000
+
+
+Started GET "/assets/text_shouts.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:38 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:38 +0000
+
+
+Started GET "/assets/shouts.css?body=1" for 24.127.195.86 at 2014-08-15 03:09:38 +0000
+
+
+Started GET "/assets/homes.js?body=1" for 24.127.195.86 at 2014-08-15 03:09:39 +0000
+
+
+Started GET "/assets/photo_shouts.js?body=1" for 24.127.195.86 at 2014-08-15 03:09:39 +0000
+
+
+Started GET "/assets/dashboards.js?body=1" for 24.127.195.86 at 2014-08-15 03:09:39 +0000
+
+
+Started GET "/assets/text_shouts.js?body=1" for 24.127.195.86 at 2014-08-15 03:09:39 +0000
+
+
+Started GET "/assets/shouts.js?body=1" for 24.127.195.86 at 2014-08-15 03:09:39 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.127.195.86 at 2014-08-15 03:09:39 +0000
+
+
+Started POST "/photo_shouts" for 24.127.195.86 at 2014-08-15 03:09:56 +0000
+Processing by PhotoShoutsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5yueSL+vimjElcwenD2JnzSRZgwaqHYWdE5bOWEumpk=", "photo_shout"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007f3f5b1bd400 @tempfile=#<Tempfile:/tmp/RackMultipart20140815-2662-15b2vtb>, @original_filename="Auster, Paul - Book of Illusions (Faber & Faber, 2002).jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo_shout[image]\"; filename=\"Auster, Paul - Book of Illusions (Faber & Faber, 2002).jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"shout!"}
+Completed 500 Internal Server Error in 1ms
+
+ActiveRecord::UnknownAttributeError (unknown attribute: image):
+  app/controllers/photo_shouts_controller.rb:15:in `build_content'
+  app/controllers/photo_shouts_controller.rb:3:in `create'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.1ms)
+
+
+Started POST "/photo_shouts" for 24.127.195.86 at 2014-08-15 03:11:51 +0000
+Processing by PhotoShoutsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5yueSL+vimjElcwenD2JnzSRZgwaqHYWdE5bOWEumpk=", "photo_shout"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007f3f5a12a4a8 @tempfile=#<Tempfile:/tmp/RackMultipart20140815-2662-1rjbo2i>, @original_filename="Auster, Paul - Book of Illusions (Faber & Faber, 2002).jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo_shout[image]\"; filename=\"Auster, Paul - Book of Illusions (Faber & Faber, 2002).jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"shout!"}
+Completed 500 Internal Server Error in 38ms
+
+Paperclip::Errors::MissingRequiredValidatorError (Paperclip::Errors::MissingRequiredValidatorError):
+  app/controllers/photo_shouts_controller.rb:15:in `build_content'
+  app/controllers/photo_shouts_controller.rb:3:in `create'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.8ms)
+
+
+Started POST "/photo_shouts" for 24.127.195.86 at 2014-08-15 03:16:11 +0000
+Processing by PhotoShoutsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5yueSL+vimjElcwenD2JnzSRZgwaqHYWdE5bOWEumpk=", "photo_shout"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007f3f59c4e1f0 @tempfile=#<Tempfile:/tmp/RackMultipart20140815-2662-q3euwh>, @original_filename="Auster, Paul - Book of Illusions (Faber & Faber, 2002).jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo_shout[image]\"; filename=\"Auster, Paul - Book of Illusions (Faber & Faber, 2002).jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"shout!"}
+Completed 500 Internal Server Error in 4ms
+
+NoMethodError (undefined method `_image_post_process_callbacks' for #<Class:0x007f3f59c7be48>):
+  app/models/photo_shout.rb:3:in `<class:PhotoShout>'
+  app/models/photo_shout.rb:1:in `<top (required)>'
+  app/controllers/photo_shouts_controller.rb:15:in `build_content'
+  app/controllers/photo_shouts_controller.rb:3:in `create'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (35.3ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (57.9ms)
+
+
+Started POST "/photo_shouts" for 24.127.195.86 at 2014-08-15 03:18:00 +0000
+Processing by PhotoShoutsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5yueSL+vimjElcwenD2JnzSRZgwaqHYWdE5bOWEumpk=", "photo_shout"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007f3f5b818ef8 @tempfile=#<Tempfile:/tmp/RackMultipart20140815-2662-1lllf01>, @original_filename="Auster, Paul - Book of Illusions (Faber & Faber, 2002).jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo_shout[image]\"; filename=\"Auster, Paul - Book of Illusions (Faber & Faber, 2002).jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"shout!"}
+Command :: file -b --mime '/tmp/79285f76bca6a3ad377e7e1189fa921d20140815-2662-30vadb.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/1786f4ff2cc537788c3afffd3a426aa820140815-2662-1mpv3sw.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/1786f4ff2cc537788c3afffd3a426aa820140815-2662-1mpv3sw.jpg[0]'
+Command :: convert '/tmp/1786f4ff2cc537788c3afffd3a426aa820140815-2662-1mpv3sw.jpg[0]' -auto-orient -resize "200x200>" '/tmp/1786f4ff2cc537788c3afffd3a426aa820140815-2662-1mpv3sw20140815-2662-nvzemw'
+Command :: file -b --mime '/tmp/1786f4ff2cc537788c3afffd3a426aa820140815-2662-1mpv3sw20140815-2662-nvzemw'
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/tmp/79285f76bca6a3ad377e7e1189fa921d20140815-2662-1t588qc.jpg'
+Binary data inserted for `string` type on column `image_content_type`
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "photo_shouts" ("image_content_type", "image_file_name", "image_file_size", "image_updated_at") VALUES (?, ?, ?, ?)  [["image_content_type", "image/jpeg"], ["image_file_name", "Auster__Paul_-_Book_of_Illusions_(Faber___Faber__2002).jpg"], ["image_file_size", 19446], ["image_updated_at", "2014-08-15 03:18:00.239218"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shouts" ("content_id", "content_type", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["content_id", 1], ["content_type", "PhotoShout"], ["created_at", "2014-08-15 03:18:01.349299"], ["updated_at", "2014-08-15 03:18:01.349299"], ["user_id", 1]]
+  [1m[35m (168.3ms)[0m  commit transaction
+Redirected to http://gray-frog-11-123468.use1.nitrousbox.com/dashboard
+Completed 302 Found in 1337ms (ActiveRecord: 171.7ms)
+
+
+Started GET "/dashboard" for 24.127.195.86 at 2014-08-15 03:18:01 +0000
+Processing by DashboardsController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mShout Load (0.3ms)[0m  SELECT "shouts".* FROM "shouts"  WHERE "shouts"."user_id" = ?  ORDER BY created_at DESC  [["user_id", 1]]
+  [1m[36mPhotoShout Load (0.2ms)[0m  [1mSELECT  "photo_shouts".* FROM "photo_shouts"  WHERE "photo_shouts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered shouts/_shout.html.erb (8.5ms)
+  Rendered dashboards/show.html.erb within layouts/application (16.0ms)
+Completed 500 Internal Server Error in 26ms
+
+ActionView::Template::Error (Missing partial photo_shouts/_photo_shout with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/home/action/shouter/app/views"
+):
+    1: <%= div_for shout do %>
+    2: <%= link_to shout.user.username, shout.user %>
+    3: shouted
+    4: <%= render shout.content %>
+    5: <%= link_to time_ago_in_words(shout.created_at), shout %>
+    6: <% end %>
+  app/views/shouts/_shout.html.erb:4:in `block in _app_views_shouts__shout_html_erb___884228012614036112_69955031351180'
+  app/views/shouts/_shout.html.erb:1:in `_app_views_shouts__shout_html_erb___884228012614036112_69955031351180'
+  app/views/dashboards/show.html.erb:12:in `_app_views_dashboards_show_html_erb___3417237161099215055_69955043240140'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.9ms)
+
+
+Started GET "/" for 24.127.195.86 at 2014-08-15 03:19:19 +0000
+Processing by HomesController#show as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+Redirected to http://gray-frog-11-123468.use1.nitrousbox.com/dashboard
+Filter chain halted as :check_user_logged_in rendered or redirected
+Completed 302 Found in 70ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/dashboard" for 24.127.195.86 at 2014-08-15 03:19:19 +0000
+Processing by DashboardsController#show as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mShout Load (0.5ms)[0m  [1mSELECT "shouts".* FROM "shouts"  WHERE "shouts"."user_id" = ?  ORDER BY created_at DESC[0m  [["user_id", 1]]
+  [1m[35mPhotoShout Load (0.2ms)[0m  SELECT  "photo_shouts".* FROM "photo_shouts"  WHERE "photo_shouts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered shouts/_shout.html.erb (11.6ms)
+  Rendered dashboards/show.html.erb within layouts/application (47.5ms)
+Completed 500 Internal Server Error in 85ms
+
+ActionView::Template::Error (Missing partial photo_shouts/_photo_shout with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/home/action/shouter/app/views"
+):
+    1: <%= div_for shout do %>
+    2: <%= link_to shout.user.username, shout.user %>
+    3: shouted
+    4: <%= render shout.content %>
+    5: <%= link_to time_ago_in_words(shout.created_at), shout %>
+    6: <% end %>
+  app/views/shouts/_shout.html.erb:4:in `block in _app_views_shouts__shout_html_erb__3279266418084750529_70171354819380'
+  app/views/shouts/_shout.html.erb:1:in `_app_views_shouts__shout_html_erb__3279266418084750529_70171354819380'
+  app/views/dashboards/show.html.erb:12:in `_app_views_dashboards_show_html_erb___3353353280703045477_70171355657940'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.8ms)
+
+
+Started GET "/dashboard" for 24.127.195.86 at 2014-08-15 03:24:04 +0000
+Processing by DashboardsController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mShout Load (0.2ms)[0m  SELECT "shouts".* FROM "shouts"  WHERE "shouts"."user_id" = ?  ORDER BY created_at DESC  [["user_id", 1]]
+  [1m[36mPhotoShout Load (0.1ms)[0m  [1mSELECT  "photo_shouts".* FROM "photo_shouts"  WHERE "photo_shouts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered photo_shouts/_photo_shout.html.erb (2.0ms)
+  [1m[35mTextShout Load (0.2ms)[0m  SELECT  "text_shouts".* FROM "text_shouts"  WHERE "text_shouts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered text_shouts/_text_shout.html.erb (0.4ms)
+  [1m[36mTextShout Load (0.1ms)[0m  [1mSELECT  "text_shouts".* FROM "text_shouts"  WHERE "text_shouts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered text_shouts/_text_shout.html.erb (0.0ms)
+  Rendered shouts/_shout.html.erb (16.5ms)
+  Rendered dashboards/show.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 95ms (Views: 91.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/dashboards.css?body=1" for 24.127.195.86 at 2014-08-15 03:24:05 +0000
+
+
+Started GET "/assets/photo_shouts.css?body=1" for 24.127.195.86 at 2014-08-15 03:24:05 +0000
+
+
+Started GET "/assets/homes.css?body=1" for 24.127.195.86 at 2014-08-15 03:24:05 +0000
+
+
+Started GET "/assets/text_shouts.css?body=1" for 24.127.195.86 at 2014-08-15 03:24:05 +0000
+
+
+Started GET "/assets/shouts.css?body=1" for 24.127.195.86 at 2014-08-15 03:24:05 +0000
+
+
+Started GET "/assets/shouter.css?body=1" for 24.127.195.86 at 2014-08-15 03:24:05 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.127.195.86 at 2014-08-15 03:24:05 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.127.195.86 at 2014-08-15 03:24:05 +0000
+
+
+Started GET "/assets/homes.js?body=1" for 24.127.195.86 at 2014-08-15 03:24:05 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.127.195.86 at 2014-08-15 03:24:05 +0000
+
+
+Started GET "/assets/dashboards.js?body=1" for 24.127.195.86 at 2014-08-15 03:24:05 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.127.195.86 at 2014-08-15 03:24:05 +0000
+
+
+Started GET "/assets/shouts.js?body=1" for 24.127.195.86 at 2014-08-15 03:24:05 +0000
+
+
+Started GET "/assets/text_shouts.js?body=1" for 24.127.195.86 at 2014-08-15 03:24:06 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.127.195.86 at 2014-08-15 03:24:06 +0000
+
+
+Started GET "/assets/photo_shouts.js?body=1" for 24.127.195.86 at 2014-08-15 03:24:06 +0000
+
+
+Started GET "/dashboard" for 24.127.195.86 at 2014-08-15 03:26:59 +0000
+Processing by DashboardsController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mShout Load (0.2ms)[0m  [1mSELECT "shouts".* FROM "shouts"  WHERE "shouts"."user_id" = ?  ORDER BY created_at DESC[0m  [["user_id", 1]]
+  [1m[35mPhotoShout Load (0.1ms)[0m  SELECT  "photo_shouts".* FROM "photo_shouts"  WHERE "photo_shouts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered photo_shouts/_photo_shout.html.erb (15.5ms)
+  Rendered shouts/_shout.html.erb (17.7ms)
+  Rendered dashboards/show.html.erb within layouts/application (21.5ms)
+Completed 500 Internal Server Error in 27ms
+
+ActionView::Template::Error (undefined local variable or method `photo_shout_image' for #<#<Class:0x007fa415792b18>:0x007fa41463caa8>):
+    1: <%= link_to image_tag(photo_shout.image.url(:shout)), photo_shout_image.url %>
+  app/views/photo_shouts/_photo_shout.html.erb:1:in `_app_views_photo_shouts__photo_shout_html_erb__324753267725294327_70171346398880'
+  app/views/shouts/_shout.html.erb:4:in `block in _app_views_shouts__shout_html_erb__3279266418084750529_70171354819380'
+  app/views/shouts/_shout.html.erb:1:in `_app_views_shouts__shout_html_erb__3279266418084750529_70171354819380'
+  app/views/dashboards/show.html.erb:12:in `_app_views_dashboards_show_html_erb___3353353280703045477_70171355657940'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.4ms)
+
+
+Started GET "/dashboard" for 24.127.195.86 at 2014-08-15 03:27:37 +0000
+Processing by DashboardsController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mShout Load (0.2ms)[0m  SELECT "shouts".* FROM "shouts"  WHERE "shouts"."user_id" = ?  ORDER BY created_at DESC  [["user_id", 1]]
+  [1m[36mPhotoShout Load (0.1ms)[0m  [1mSELECT  "photo_shouts".* FROM "photo_shouts"  WHERE "photo_shouts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered photo_shouts/_photo_shout.html.erb (2.3ms)
+  [1m[35mTextShout Load (0.1ms)[0m  SELECT  "text_shouts".* FROM "text_shouts"  WHERE "text_shouts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered text_shouts/_text_shout.html.erb (0.1ms)
+  [1m[36mTextShout Load (0.1ms)[0m  [1mSELECT  "text_shouts".* FROM "text_shouts"  WHERE "text_shouts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered text_shouts/_text_shout.html.erb (0.1ms)
+  Rendered shouts/_shout.html.erb (9.5ms)
+  Rendered dashboards/show.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 26ms (Views: 22.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/dashboards.css?body=1" for 24.127.195.86 at 2014-08-15 03:27:38 +0000
+
+
+Started GET "/assets/photo_shouts.css?body=1" for 24.127.195.86 at 2014-08-15 03:27:38 +0000
+
+
+Started GET "/assets/text_shouts.css?body=1" for 24.127.195.86 at 2014-08-15 03:27:38 +0000
+
+
+Started GET "/assets/shouts.css?body=1" for 24.127.195.86 at 2014-08-15 03:27:38 +0000
+
+
+Started GET "/assets/homes.css?body=1" for 24.127.195.86 at 2014-08-15 03:27:38 +0000
+
+
+Started GET "/assets/shouter.css?body=1" for 24.127.195.86 at 2014-08-15 03:27:38 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.127.195.86 at 2014-08-15 03:27:38 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.127.195.86 at 2014-08-15 03:27:38 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.127.195.86 at 2014-08-15 03:27:38 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.127.195.86 at 2014-08-15 03:27:38 +0000
+
+
+Started GET "/assets/homes.js?body=1" for 24.127.195.86 at 2014-08-15 03:27:38 +0000
+
+
+Started GET "/assets/dashboards.js?body=1" for 24.127.195.86 at 2014-08-15 03:27:38 +0000
+
+
+Started GET "/assets/photo_shouts.js?body=1" for 24.127.195.86 at 2014-08-15 03:27:38 +0000
+
+
+Started GET "/assets/shouts.js?body=1" for 24.127.195.86 at 2014-08-15 03:27:38 +0000
+
+
+Started GET "/assets/text_shouts.js?body=1" for 24.127.195.86 at 2014-08-15 03:27:38 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.127.195.86 at 2014-08-15 03:27:38 +0000
+
+
+Started GET "/dashboard" for 24.127.195.86 at 2014-08-15 03:29:06 +0000
+Processing by DashboardsController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mShout Load (0.2ms)[0m  [1mSELECT "shouts".* FROM "shouts"  WHERE "shouts"."user_id" = ?  ORDER BY created_at DESC[0m  [["user_id", 1]]
+  [1m[35mPhotoShout Load (0.1ms)[0m  SELECT  "photo_shouts".* FROM "photo_shouts"  WHERE "photo_shouts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered photo_shouts/_photo_shout.html.erb (1.5ms)
+  [1m[36mTextShout Load (0.1ms)[0m  [1mSELECT  "text_shouts".* FROM "text_shouts"  WHERE "text_shouts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered text_shouts/_text_shout.html.erb (0.1ms)
+  [1m[35mTextShout Load (0.1ms)[0m  SELECT  "text_shouts".* FROM "text_shouts"  WHERE "text_shouts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered text_shouts/_text_shout.html.erb (0.1ms)
+  Rendered shouts/_shout.html.erb (9.2ms)
+  Rendered dashboards/show.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 25ms (Views: 22.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/dashboards.css?body=1" for 24.127.195.86 at 2014-08-15 03:29:07 +0000
+
+
+Started GET "/assets/shouter.css?body=1" for 24.127.195.86 at 2014-08-15 03:29:07 +0000
+
+
+Started GET "/assets/text_shouts.css?body=1" for 24.127.195.86 at 2014-08-15 03:29:07 +0000
+
+
+Started GET "/assets/photo_shouts.css?body=1" for 24.127.195.86 at 2014-08-15 03:29:07 +0000
+
+
+Started GET "/assets/homes.css?body=1" for 24.127.195.86 at 2014-08-15 03:29:07 +0000
+
+
+Started GET "/assets/shouts.css?body=1" for 24.127.195.86 at 2014-08-15 03:29:07 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.127.195.86 at 2014-08-15 03:29:07 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.127.195.86 at 2014-08-15 03:29:07 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.127.195.86 at 2014-08-15 03:29:07 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.127.195.86 at 2014-08-15 03:29:07 +0000
+
+
+Started GET "/assets/dashboards.js?body=1" for 24.127.195.86 at 2014-08-15 03:29:07 +0000
+
+
+Started GET "/assets/homes.js?body=1" for 24.127.195.86 at 2014-08-15 03:29:07 +0000
+
+
+Started GET "/assets/text_shouts.js?body=1" for 24.127.195.86 at 2014-08-15 03:29:08 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.127.195.86 at 2014-08-15 03:29:08 +0000
+
+
+Started GET "/assets/photo_shouts.js?body=1" for 24.127.195.86 at 2014-08-15 03:29:08 +0000
+
+
+Started GET "/assets/shouts.js?body=1" for 24.127.195.86 at 2014-08-15 03:29:08 +0000
+
+
+Started POST "/text_shouts" for 24.127.195.86 at 2014-08-15 03:32:01 +0000
+Processing by TextShoutsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5yueSL+vimjElcwenD2JnzSRZgwaqHYWdE5bOWEumpk=", "text_shout"=>{"body"=>""}, "commit"=>"shout!"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "shouts" ("content_type", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["content_type", "TextShout"], ["created_at", "2014-08-15 03:32:01.080910"], ["updated_at", "2014-08-15 03:32:01.080910"], ["user_id", 1]]
+  [1m[35m (59.0ms)[0m  commit transaction
+Redirected to http://gray-frog-11-123468.use1.nitrousbox.com/dashboard
+Completed 302 Found in 84ms (ActiveRecord: 61.4ms)
+
+
+Started GET "/dashboard" for 24.127.195.86 at 2014-08-15 03:32:01 +0000
+Processing by DashboardsController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mShout Load (0.3ms)[0m  SELECT "shouts".* FROM "shouts"  WHERE "shouts"."user_id" = ?  ORDER BY created_at DESC  [["user_id", 1]]
+  Rendered shouts/_shout.html.erb (6.6ms)
+  Rendered dashboards/show.html.erb within layouts/application (15.5ms)
+Completed 500 Internal Server Error in 25ms
+
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    2: <%= link_to shout.user.username, shout.user %>
+    3: shouted
+    4: <div>
+    5: <%= render shout.content %>
+    6: </div>
+    7: <%= link_to time_ago_in_words(shout.created_at), shout %>
+    8: <% end %>
+  app/views/shouts/_shout.html.erb:5:in `block in _app_views_shouts__shout_html_erb__3279266418084750529_70171345151520'
+  app/views/shouts/_shout.html.erb:1:in `_app_views_shouts__shout_html_erb__3279266418084750529_70171345151520'
+  app/views/dashboards/show.html.erb:12:in `_app_views_dashboards_show_html_erb___3353353280703045477_70171355657940'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.7ms)
+
+
+Started GET "/dashboard" for 24.127.195.86 at 2014-08-15 03:32:15 +0000
+Processing by DashboardsController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mShout Load (0.3ms)[0m  SELECT "shouts".* FROM "shouts"  WHERE "shouts"."user_id" = ?  ORDER BY created_at DESC  [["user_id", 1]]
+  Rendered shouts/_shout.html.erb (5.6ms)
+  Rendered dashboards/show.html.erb within layouts/application (20.7ms)
+Completed 500 Internal Server Error in 38ms
+
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    2: <%= link_to shout.user.username, shout.user %>
+    3: shouted
+    4: <div>
+    5: <%= render shout.content %>
+    6: </div>
+    7: <%= link_to time_ago_in_words(shout.created_at), shout %>
+    8: <% end %>
+  app/views/shouts/_shout.html.erb:5:in `block in _app_views_shouts__shout_html_erb__3279266418084750529_70171345151520'
+  app/views/shouts/_shout.html.erb:1:in `_app_views_shouts__shout_html_erb__3279266418084750529_70171345151520'
+  app/views/dashboards/show.html.erb:12:in `_app_views_dashboards_show_html_erb___3353353280703045477_70171355657940'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.5ms)
+
+
+Started GET "/" for 24.127.195.86 at 2014-08-15 03:32:29 +0000
+Processing by HomesController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+Redirected to http://gray-frog-11-123468.use1.nitrousbox.com/dashboard
+Filter chain halted as :check_user_logged_in rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/dashboard" for 24.127.195.86 at 2014-08-15 03:32:30 +0000
+Processing by DashboardsController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mShout Load (0.2ms)[0m  [1mSELECT "shouts".* FROM "shouts"  WHERE "shouts"."user_id" = ?  ORDER BY created_at DESC[0m  [["user_id", 1]]
+  Rendered shouts/_shout.html.erb (1.6ms)
+  Rendered dashboards/show.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    2: <%= link_to shout.user.username, shout.user %>
+    3: shouted
+    4: <div>
+    5: <%= render shout.content %>
+    6: </div>
+    7: <%= link_to time_ago_in_words(shout.created_at), shout %>
+    8: <% end %>
+  app/views/shouts/_shout.html.erb:5:in `block in _app_views_shouts__shout_html_erb__3279266418084750529_70171345151520'
+  app/views/shouts/_shout.html.erb:1:in `_app_views_shouts__shout_html_erb__3279266418084750529_70171345151520'
+  app/views/dashboards/show.html.erb:12:in `_app_views_dashboards_show_html_erb___3353353280703045477_70171355657940'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.1ms)
+
+
+Started GET "/" for 24.127.195.86 at 2014-08-15 03:35:25 +0000
+Processing by HomesController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+Redirected to http://gray-frog-11-123468.use1.nitrousbox.com/dashboard
+Filter chain halted as :check_user_logged_in rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/dashboard" for 24.127.195.86 at 2014-08-15 03:35:25 +0000
+Processing by DashboardsController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mShout Load (0.2ms)[0m  SELECT "shouts".* FROM "shouts"  WHERE "shouts"."user_id" = ?  ORDER BY created_at DESC  [["user_id", 1]]
+  Rendered shouts/_shout.html.erb (1.4ms)
+  Rendered dashboards/show.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    2: <%= link_to shout.user.username, shout.user %>
+    3: shouted
+    4: <div>
+    5: <%= render shout.content %>
+    6: </div>
+    7: <%= link_to time_ago_in_words(shout.created_at), shout %>
+    8: <% end %>
+  app/views/shouts/_shout.html.erb:5:in `block in _app_views_shouts__shout_html_erb__3279266418084750529_70171345151520'
+  app/views/shouts/_shout.html.erb:1:in `_app_views_shouts__shout_html_erb__3279266418084750529_70171345151520'
+  app/views/dashboards/show.html.erb:12:in `_app_views_dashboards_show_html_erb___3353353280703045477_70171355657940'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.5ms)
+
+
+Started GET "/" for 24.127.195.86 at 2014-08-15 03:36:53 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomesController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+Redirected to http://gray-frog-11-123468.use1.nitrousbox.com/dashboard
+Filter chain halted as :check_user_logged_in rendered or redirected
+Completed 302 Found in 35ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/dashboard" for 24.127.195.86 at 2014-08-15 03:36:53 +0000
+Processing by DashboardsController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mShout Load (0.3ms)[0m  SELECT "shouts".* FROM "shouts"  WHERE "shouts"."user_id" = ?  ORDER BY created_at DESC  [["user_id", 1]]
+  Rendered shouts/_shout.html.erb (9.3ms)
+  Rendered dashboards/show.html.erb within layouts/application (44.6ms)
+Completed 500 Internal Server Error in 89ms
+
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    2: <%= link_to shout.user.username, shout.user %>
+    3: shouted
+    4: <div>
+    5: <%= render shout.content %>
+    6: </div>
+    7: <%= link_to time_ago_in_words(shout.created_at), shout %>
+    8: <% end %>
+  app/views/shouts/_shout.html.erb:5:in `block in _app_views_shouts__shout_html_erb___944330834047274646_70192827301760'
+  app/views/shouts/_shout.html.erb:1:in `_app_views_shouts__shout_html_erb___944330834047274646_70192827301760'
+  app/views/dashboards/show.html.erb:12:in `_app_views_dashboards_show_html_erb___3159692878634019364_70192828689860'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.7ms)
+
+
+Started GET "/" for 66.249.88.53 at 2014-08-15 03:41:42 +0000
+Processing by HomesController#show as HTML
+  Rendered homes/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 81ms (Views: 80.3ms | ActiveRecord: 0.0ms)
